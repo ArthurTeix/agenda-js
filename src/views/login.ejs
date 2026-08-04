@@ -7,8 +7,8 @@
         <div class="col-lg-2"></div>
 
         <div class="col-lg-8 my-3">
-            <h1 class="text-center">Login</h1>
-            <p class="text-center lead">Faça login ou crie sua conta abaixo</p>
+            <h1 class="text-center">Criar conta ou Entrar</h1>
+            <p class="text-center lead">Faça sua conta abaixo ou Entre</p>
 
             <div class="row">
 
@@ -17,6 +17,7 @@
                     <small>Se você ainda não tem conta, preencha o formulário abaixo:</small>
 
                     <form action="/login/register" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" placeholder="E-mail">
                         </div>
@@ -32,7 +33,8 @@
                     <h4>Entrar no sistema</h4>
                     <small>Se você já tem conta, faça login abaixo:</small>
 
-                    <form action="/login/register" method="POST">
+                    <form action="/login/login" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" placeholder="E-mail">
                         </div>
