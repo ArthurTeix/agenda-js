@@ -11,9 +11,11 @@
                 <a class="nav-link" href="#">Link</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/login/index">Entrar</a>
-            </li>
+            <% if (!user) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/index">Entrar</a>
+                </li>
+            <% } %>
 
         </ul>
     </div>
