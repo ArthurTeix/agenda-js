@@ -26,7 +26,7 @@ class Login {
         await this.userExists()
         
         if (this.errors.length > 0) { return }
-        
+
         const salt = bcryptjs.genSaltSync()
         this.body.password = bcryptjs.hashSync(this.body.password, salt)
 
@@ -66,3 +66,4 @@ class Login {
 }
 
 module.exports = Login
+
