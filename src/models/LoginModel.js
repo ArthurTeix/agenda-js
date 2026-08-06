@@ -1,5 +1,6 @@
 // nome do arquivo começa com letras maiúsculas pois modelos são classes
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const LoginSchema = new mongoose.Schema({
     email: { type: String, required: true},
@@ -19,14 +20,17 @@ class Login {
     // register -> valida -> cleanUp
     register() {
         this.valida()
+        if (this.errors.length > 0) { return }
     }
 
     valida() {
-        cleanUp()
+        this.cleanUp()
         // Validação
         // E-mail deve ser válido
-        // Senha mínima de 6 char
+        if (!validator.isEmail(this.body.email)) { this.errors.push("E-mail inválido.") }
 
+        // Senha mínima de 6 char e máximo de 15
+        if (this.body.password.length < 6 || this.body.password.length > 15) { this.errors.push("A senha deve conter entre 6 e 15 caracteres.")}
 
     }
 
