@@ -52,3 +52,8 @@ exports.login = async (req, res) => {
         res.render('404')
     }
 }
+
+exports.logout = async (req, res) => { 
+    req.session.destroy()
+    res.redirect('/')
+}
