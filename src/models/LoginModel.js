@@ -22,11 +22,15 @@ class Login {
     async register() {
         this.valida()
         if (this.errors.length > 0) { return }
+        
+        await this.userExists()
+        
+        if (this.errors.length > 0) { return }
+        
+        const salt = bcryptjs.genSaltSync()
+        this.body.password = bcryptjs.hashSync(this.body.password, salt)
 
         try {
-            const salt = bcryptjs.genSaltSync()
-            this.body.password = bcryptjs.hashSync(this.body.password, salt)
-            
             this.user = await LoginModel.create(this.body)
         } catch(err) { console.log(err) }
     }
@@ -51,6 +55,13 @@ class Login {
             email: this.body.email,
             password: this.body.password
         }
+    }
+
+    // promises pois vou mexer no DB
+    async userExists() {    
+        const user = await LoginModel.findOne({ email: this.body.email })
+
+        if(user) { this.errors.push("Usuário existente.") }
     }
 }
 
