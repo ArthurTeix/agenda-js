@@ -1,5 +1,5 @@
 exports.middlewareGlobal = (req, res, next) => {
-    res.locals.umaVariavelLocal = "Testando variável local"
+    res.locals.errors = req.flash('errors')
     next() // <- NUNCA ESQUECER
 }
 

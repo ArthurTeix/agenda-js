@@ -17,10 +17,14 @@ class Login {
         this.user = null
     }
 
-    // register -> valida -> cleanUp
-    register() {
+    // sempre que vou mexer com base de dados, devo usar promises (porque o model vai me retornar uma promise)
+    async register() {
         this.valida()
         if (this.errors.length > 0) { return }
+
+        try {
+            this.user = await LoginModel.create(this.body)
+        } catch(err) { console.log(err) }
     }
 
     valida() {
