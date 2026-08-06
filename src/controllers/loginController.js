@@ -5,17 +5,23 @@ exports.index = (req, res) => {
 }
 
 exports.register = async (req, res) => {
-    const login = new Login(req.body)
-    await login.register()
+    try {
+        const login = new Login(req.body)
+        await login.register()
+    
+        if (login.errors.length > 0) {
+            req.flash('errors', login.errors)
+    
+            req.session.save(function() {
+                return res.redirect('/login/index')
+            })
+            return
+        }
+        res.send(login.errors)
 
-    if (login.errors.length > 0) {
-        req.flash('errors', login.errors)
-
-        req.session.save(function() {
-            return res.redirect('/login/index')
-        })
-        return
+    } catch(err) {
+        console.log(err)
+        res.render('404')
     }
 
-    res.send(login.errors)
 }
