@@ -6,7 +6,6 @@ const bcryptjs = require('bcryptjs')
 const LoginSchema = new mongoose.Schema({
     email: { type: String, required: true},
     password: { type: String, required: true}
-    
 })
 
 const LoginModel = mongoose.model("Login", LoginSchema)
@@ -16,6 +15,23 @@ class Login {
         this.body = body;
         this.errors = [];
         this.user = null
+    }
+
+    async login() {
+        this.valida()
+        if (this.errors.length > 0) { return }
+
+        this.user = await LoginModel.findOne({ email: this.body.email })
+        if (!this.user) { 
+            this.errors.push("Usuário não existe.")
+            return
+        }
+        
+        if (!bcryptjs.compareSync(this.body.password, this.user.password)) {
+            this.errors.push("Senha incorreta.")
+            this.user = null
+            return
+        }
     }
 
     // sempre que vou mexer com base de dados, devo usar promises (porque o model vai me retornar uma promise)
@@ -30,9 +46,7 @@ class Login {
         const salt = bcryptjs.genSaltSync()
         this.body.password = bcryptjs.hashSync(this.body.password, salt)
 
-        
         this.user = await LoginModel.create(this.body)
-        
     }
 
     valida() {
@@ -59,9 +73,9 @@ class Login {
 
     // promises pois vou mexer no DB
     async userExists() {    
-        const user = await LoginModel.findOne({ email: this.body.email })
+        this.user = await LoginModel.findOne({ email: this.body.email })
 
-        if(user) { this.errors.push("Usuário existente.") }
+        if(this.user) { this.errors.push("Usuário existente.") }
     }
 }
 
