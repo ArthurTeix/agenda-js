@@ -11,14 +11,16 @@ exports.register = async (req, res) => {
     
         if (login.errors.length > 0) {
             req.flash('errors', login.errors)
-    
             req.session.save(function() {
                 return res.redirect('/login/index')
             })
             return
         }
-        res.send(login.errors)
-
+        req.flash('success', 'Seu usuário foi cadastrado com sucesso.')
+        req.session.save(function() {
+            return res.redirect('/login/index')
+        })
+        return
     } catch(err) {
         console.log(err)
         res.render('404')
