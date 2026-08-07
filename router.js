@@ -3,6 +3,7 @@ const route = express.Router()
 
 const homeController = require('./src/controllers/homeController.js')
 const loginController = require('./src/controllers/loginController.js')
+const contatoController = require('./src/controllers/contatoController.js')
 
 // Rotas da home (index)
 route.get('/', homeController.index)
