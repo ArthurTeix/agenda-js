@@ -1,5 +1,5 @@
 <%- include('includes/head') %>
-<%- include('includes/nav') %>
+<%- include('includes/nav-login') %>
 
 <div class="container">
     <div class="row">
@@ -8,11 +8,22 @@
 
         <div class="col-lg-8 my-3">
             <h1 class="text-center">Contato</h1>
-            <p class="text-center lead">Cadastre seus contatos abaixo</p>
+            <p class="text-center lead">Crie ou edite seus contatos abaixo</p>
 
             <%- include('includes/messages') %>
 
+            <form action="/contato/register" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="form-group">
+                    <h3>Crie seu contato</h3>
+                    <input type="text" class="form-control my-2" name="nome" placeholder="Nome">
+                    <input type="text" class="form-control my-2" name="sobrenome" placeholder="Sobrenome">
+                    <input type="email" class="form-control my-2" name="email" placeholder="E-mail">
+                    <input type="tel" class="form-control my-2" name="telefone" placeholder="Telefone">
+                </div>
 
+                <button type="submit" class="btn btn-primary">Salvar contato</button>
+            </form>
         </div>
 
         <div class="col-lg-2"></div>
