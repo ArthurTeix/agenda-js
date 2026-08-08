@@ -4,6 +4,7 @@ exports.index = (req, res) => {
     res.render('contato', {contato: {}})
 }
 
+// CREATE (crud)
 exports.register = async (req, res) => {
     try {
         const contato = new Contato(req.body)
@@ -37,6 +38,7 @@ exports.editIndex = async (req, res) => {
     res.render('contato', { contato })
 }
 
+// UPDATE (crud)
 exports.edit = async (req, res) => {
     try {
         if (!req.params.id) { return res.render('404') }
