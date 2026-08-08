@@ -18,13 +18,6 @@ function Contato(body) {
     this.contato = null
 }
 
-Contato.buscaPorId = async (id) => {
-    if (typeof id !== 'string') { return }
-
-    const user = await ContatoModel.findById(id)
-    return user
-}
-
 Contato.prototype.register = async function() {
     this.valida()
 
@@ -62,5 +55,15 @@ Contato.prototype.edit = async function(id) {
 
     this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true })
 }
+
+// Métodos Estáticos (não tem acesso ao this)
+Contato.buscaPorId = async (id) => {
+    if (typeof id !== 'string') { return }
+
+    const user = await ContatoModel.findById(id)
+    return user
+}
+
+
 
 module.exports = Contato
