@@ -20,7 +20,7 @@ exports.register = async (req, res) => {
     
         req.flash('success', 'Contato registrado com sucesso.')
         req.session.save(function() {
-            return res.redirect(`/contato/index/${contato.contato._id}`)
+            return res.redirect(`/`)
         })
         return
     } catch (err) {
@@ -56,7 +56,7 @@ exports.edit = async (req, res) => {
 
         req.flash('success', 'Contato atualizado com sucesso.')
         req.session.save(function() {
-            return res.redirect(`/contato/index/${contato.contato._id}`)
+            return res.redirect(`/`)
         })
         return
     } catch(err) {
