@@ -14,12 +14,10 @@ exports.register = async (req, res) => {
             req.session.save(function() {
                 return res.redirect('/contato/index')
             })
-            return
         }
     
         req.flash('success', 'Contato registrado com sucesso.')
         req.session.save(function() {
-            console.log('cadastrado')
             return res.redirect(`/contato/index/${contato.contato._id}`)
         })
         return
@@ -36,4 +34,29 @@ exports.editIndex = async (req, res) => {
     if (!contato) { return res.render('404') }
 
     res.render('contato', { contato })
+}
+
+exports.edit = async (req, res) => {
+    try {
+        if (!req.params.id) { return res.render('404') }
+    
+        const contato = new Contato(req.body)
+        await contato.edit(req.params.id)
+    
+        if (contato.errors.length > 0) {
+            req.flash('errors', contato.errors)
+            req.session.save(function() {
+                return res.redirect('/contato/index')
+            })
+            return
+        }
+        
+        req.flash('success', 'Contato atualizado com sucesso.')
+        req.session.save(function() {
+            return res.redirect(`/contato/index/${contato.contato._id}`)
+        })
+    } catch(err) {
+        console.log(err)
+        res.render('404')
+    }
 }

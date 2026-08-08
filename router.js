@@ -20,6 +20,6 @@ route.get('/login/logout', loginController.logout)
 route.get('/contato/index', loginRequired, contatoController.index) // garantir que apenas cadastrem contatos quem está logado
 route.post('/contato/register', contatoController.register)
 route.get('/contato/index/:id', contatoController.editIndex)
-route.post('/contato/edit/:id', contatoController.editIndex)
+route.post('/contato/edit/:id', contatoController.edit)
 
 module.exports = route  
