@@ -14,6 +14,7 @@ exports.register = async (req, res) => {
             req.session.save(function() {
                 return res.redirect('/contato/index')
             })
+            return
         }
     
         req.flash('success', 'Contato registrado com sucesso.')
@@ -46,15 +47,16 @@ exports.edit = async (req, res) => {
         if (contato.errors.length > 0) {
             req.flash('errors', contato.errors)
             req.session.save(function() {
-                return res.redirect('/contato/index')
+                return res.redirect(`/contato/index/${req.params.id}`)
             })
             return
         }
-        
+
         req.flash('success', 'Contato atualizado com sucesso.')
         req.session.save(function() {
             return res.redirect(`/contato/index/${contato.contato._id}`)
         })
+        return
     } catch(err) {
         console.log(err)
         res.render('404')

@@ -18,8 +18,8 @@ route.get('/login/logout', loginController.logout)
 
 // Rotas de contato
 route.get('/contato/index', loginRequired, contatoController.index) // garantir que apenas cadastrem contatos quem está logado
-route.post('/contato/register', contatoController.register)
-route.get('/contato/index/:id', contatoController.editIndex)
-route.post('/contato/edit/:id', contatoController.edit)
+route.post('/contato/register', loginRequired, contatoController.register)
+route.get('/contato/index/:id', loginRequired, contatoController.editIndex)
+route.post('/contato/edit/:id', loginRequired, contatoController.edit)
 
 module.exports = route  
