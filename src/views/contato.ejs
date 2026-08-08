@@ -19,14 +19,24 @@
             <% } %>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="form-group">
+                    <% if (contato._id) { %>
+                    <h3>Edite seu contato</h3>
+                    <% } else { %>
                     <h3>Crie seu contato</h3>
+                    <% } %>
+                    
                     <input value="<%= contato.nome %>" type="text" class="form-control my-2" name="nome" placeholder="Nome">
                     <input value="<%= contato.sobrenome %>" type="text" class="form-control my-2" name="sobrenome" placeholder="Sobrenome">
                     <input value="<%= contato.email %>" type="email" class="form-control my-2" name="email" placeholder="E-mail">
                     <input value="<%= contato.telefone %>" type="tel" class="form-control my-2" name="telefone" placeholder="Telefone">
                 </div>
 
+                <% if (contato._id) { %>
+                <button type="submit" class="btn btn-primary">Editar contato</button>
+                <% } else { %>
                 <button type="submit" class="btn btn-primary">Salvar contato</button>
+                <% } %>
+                
             </form>
         </div>
 
