@@ -66,7 +66,7 @@ Contato.buscaPorId = async (id) => {
 
 Contato.buscaContatos = async () => {
     const contatos = await ContatoModel.find()
-        .sort({ criadoEm: -1 }) // organizados pela criação de forma decrescente
+        .sort({ criadoEm: -1 }) // organizados pela criação de forma decrescente    
     return contatos
 }
 
