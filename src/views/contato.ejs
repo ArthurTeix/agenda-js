@@ -16,10 +16,10 @@
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="form-group">
                     <h3>Crie seu contato</h3>
-                    <input type="text" class="form-control my-2" name="nome" placeholder="Nome">
-                    <input type="text" class="form-control my-2" name="sobrenome" placeholder="Sobrenome">
-                    <input type="email" class="form-control my-2" name="email" placeholder="E-mail">
-                    <input type="tel" class="form-control my-2" name="telefone" placeholder="Telefone">
+                    <input value="<%= contato.nome %>" type="text" class="form-control my-2" name="nome" placeholder="Nome">
+                    <input value="<%= contato.sobrenome %>" type="text" class="form-control my-2" name="sobrenome" placeholder="Sobrenome">
+                    <input value="<%= contato.email %>" type="email" class="form-control my-2" name="email" placeholder="E-mail">
+                    <input value="<%= contato.telefone %>" type="tel" class="form-control my-2" name="telefone" placeholder="Telefone">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Salvar contato</button>
