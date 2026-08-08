@@ -32,7 +32,7 @@ Contato.prototype.valida = function() {
     // E-mail deve ser válido
     if (this.body.email && !validator.isEmail(this.body.email)) { this.errors.push("E-mail inválido.") }
     if (!this.body.nome) { this.errors.push("Nome é um campo obrigatório.") }
-    if (!this.body.email && !this.body.telefone) { this.errors.push("É necessário e-mail ou telefone para salvar um contato") }
+    if (!this.body.email && !this.body.telefone) { this.errors.push("É necessário e-mail ou telefone para salvar um contato.") }
 }
 
 Contato.prototype.cleanUp = function() { 
