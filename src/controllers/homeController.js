@@ -1,6 +1,7 @@
 const Contato = require('../models/ContatoModel')
 
+
 exports.index = async (req, res) => {
-    const contatos = await Contato.buscaContatos()
+    const contatos = await Contato.buscaContatos() // funcionalidade READ, vai buscar os contatos e depois renderizar a página já com os contatos listados
     res.render('index', { contatos })
 } 
