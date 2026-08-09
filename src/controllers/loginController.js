@@ -1,7 +1,6 @@
 const Login = require('../models/LoginModel.js')
 
 exports.index = (req, res) => {
-    if (req.session.user) {return res.render('login-logado') }
     return res.render('login')
 }
 
@@ -54,6 +53,6 @@ exports.login = async (req, res) => {
 }
 
 exports.logout = async (req, res) => { 
-    req.session.destroy()
-    res.redirect('/')
+    req.session.destroy() // quebra a sessão (sai dela)
+    res.redirect('/') // redireciona para a home, para se quiser entrar novamente
 }
