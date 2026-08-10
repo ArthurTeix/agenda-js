@@ -1,4 +1,4 @@
-// Esse arquivo é responsável por renderizar minhas rotas e com os métodos e funções do model referente, garantir as funcionalidades e verificações da page
+// Esse arquivo é responsável por renderizar minhas rotas, com os métodos e funções do model referente, garantir as funcionalidades e verificações da page
 const Contato = require('../models/ContatoModel.js')
 
 exports.index = (req, res) => {

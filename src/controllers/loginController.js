@@ -1,13 +1,15 @@
+// Esse arquivo é responsável por renderizar minhas rotas, com os métodos e funções do model referente, garantir as funcionalidades e verificações da page
 const Login = require('../models/LoginModel.js')
 
 exports.index = (req, res) => {
-    return res.render('login')
+    res.render('login')
 }
 
+// responsável por criar os logins na base de dados
 exports.register = async (req, res) => {
     try {
-        const login = new Login(req.body)
-        await login.register()
+        const login = new Login(req.body) 
+        await login.register() // funcionalidade de criar cadastro no DB
     
         if (login.errors.length > 0) {
             req.flash('errors', login.errors)
@@ -27,6 +29,7 @@ exports.register = async (req, res) => {
     }
 }
 
+// responsável por logar os já cadastrados
 exports.login = async (req, res) => {
     try {
         const login = new Login(req.body)
@@ -52,6 +55,7 @@ exports.login = async (req, res) => {
     }
 }
 
+// responsável por sair da sessão
 exports.logout = async (req, res) => { 
     req.session.destroy() // quebra a sessão (sai dela)
     res.redirect('/') // redireciona para a home, para se quiser entrar novamente
