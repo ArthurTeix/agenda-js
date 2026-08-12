@@ -105,3 +105,16 @@ agenda-js/
 └── webpack.config.js
 ```
 
+### Organização
+
+* **`controllers/`** — contém a lógica responsável pelo funcionamento das funcionalidades da aplicação.
+* **`middlewares/`** — reúne middlewares utilizados no processamento das requisições, autenticação e segurança.
+* **`models/`** — contém os modelos utilizados para representar e manipular os dados do MongoDB.
+* **`views/`** — páginas e templates da aplicação utilizando EJS.
+* **`frontend/`** — arquivos relacionados ao desenvolvimento do front-end.
+* **`public/`** — arquivos públicos disponibilizados pela aplicação.
+* **`router.js`** — definição e organização das rotas.
+* **`server.js`** — configuração e inicialização do servidor.
+* **`webpack.config.js`** — configuração do Webpack para o front-end.
+
+---
