@@ -51,3 +51,28 @@ Além do CRUD, o projeto também conta com autenticação, gerenciamento de sess
 * **dotenv** — gerenciamento de variáveis de ambiente
 
 ---
+
+## ✨ Funcionalidades
+
+### 👤 Usuários
+
+* Cadastro de novos usuários
+* Login de usuários
+* Logout
+* Autenticação através de sessões
+* Proteção das páginas que exigem autenticação
+* Validação dos dados fornecidos pelo usuário
+* Senhas armazenadas de forma protegida através de hash
+
+### 📇 Contatos
+
+A aplicação possui um **CRUD completo**:
+
+* ➕ **Create** — cadastrar novos contatos
+* 👁️ **Read** — visualizar os contatos cadastrados
+* ✏️ **Update** — editar informações dos contatos
+* 🗑️ **Delete** — excluir contatos
+
+Cada usuário possui acesso somente aos seus próprios contatos.
+
+---
