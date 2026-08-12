@@ -204,3 +204,10 @@ Durante o desenvolvimento, pude aprofundar meus conhecimentos em:
 * Desenvolvimento de uma aplicação completa conectando **front-end, back-end e banco de dados**
 
 ---
+
+## 🎯 Objetivo do Projeto
+
+Este projeto foi desenvolvido principalmente como forma de **praticar e consolidar conhecimentos em desenvolvimento web**, especialmente no desenvolvimento de aplicações utilizando **Node.js, Express e MongoDB**.
+
+Foi também meu primeiro projeto com foco em um **CRUD completo utilizando Express**, servindo como uma etapa importante na minha evolução como desenvolvedor.
+
