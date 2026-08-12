@@ -118,3 +118,65 @@ agenda-js/
 * **`webpack.config.js`** — configuração do Webpack para o front-end.
 
 ---
+
+## 💻 Como Executar
+
+### Pré-requisitos
+
+Antes de começar, você precisa ter:
+
+* [Node.js](https://nodejs.org/)
+* Conta no MongoDB Atlas
+* Git
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/ArthurTeix/agenda-js.git
+```
+
+### 2. Acesse o diretório
+
+```bash
+cd agenda-js
+```
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+### 4. Configure as variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+CONNECTIONSTRING=sua_string_de_conexao_mongodb
+```
+
+> Substitua os valores pelos dados da sua configuração do MongoDB
+
+### 5. Execute o projeto
+
+Para iniciar o servidor:
+
+> Será necessário dois terminais
+
+```bash
+npm start
+```
+
+Para executar o Webpack em modo de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Após iniciar o servidor, acesse:
+
+```text
+http://localhost:3000
+```
+
+---
