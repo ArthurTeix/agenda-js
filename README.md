@@ -76,3 +76,32 @@ A aplicação possui um **CRUD completo**:
 Cada usuário possui acesso somente aos seus próprios contatos.
 
 ---
+
+## 📂 Estrutura do Projeto
+
+```text
+agenda-js/
+│
+├── frontend/
+│   ├── assets/
+│   │   └── css/
+│   └── index.js
+│
+├── public/
+│   └── assets/
+│       └── js/
+│
+├── src/
+│   ├── controllers/
+│   ├── middlewares/
+│   ├── models/
+│   └── views/
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── router.js
+├── server.js
+└── webpack.config.js
+```
+
