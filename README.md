@@ -180,3 +180,27 @@ http://localhost:3000
 ```
 
 ---
+
+## 📚 O que aprendi
+
+O desenvolvimento deste projeto foi uma oportunidade para colocar em prática conceitos importantes do desenvolvimento **Back-end e Full Stack**.
+
+Durante o desenvolvimento, pude aprofundar meus conhecimentos em:
+
+* Construção de aplicações utilizando **Express.js**
+* Criação e organização de rotas
+* Desenvolvimento de um **CRUD completo**
+* Integração entre **Express e MongoDB**
+* Utilização do **Mongoose** para modelagem e manipulação dos dados
+* Implementação de **autenticação e gerenciamento de sessões**
+* Hash de senhas utilizando **bcrypt**
+* Criação e utilização de **middlewares**
+* Validação e tratamento de dados recebidos pelo usuário
+* Utilização do **Bootstrap** para construção da interface
+* Organização de projetos seguindo responsabilidades separadas
+* Utilização de **variáveis de ambiente**
+* Aplicação de práticas de segurança em aplicações web
+* Uso do **Webpack e Babel** no fluxo de desenvolvimento
+* Desenvolvimento de uma aplicação completa conectando **front-end, back-end e banco de dados**
+
+---
