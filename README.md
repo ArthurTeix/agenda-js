@@ -211,3 +211,13 @@ Este projeto foi desenvolvido principalmente como forma de **praticar e consolid
 
 Foi também meu primeiro projeto com foco em um **CRUD completo utilizando Express**, servindo como uma etapa importante na minha evolução como desenvolvedor.
 
+---
+
+## 🛣️ Futuras Melhorias
+
+* [ ] 🔐 Alterar a mensagem exibida na página inicial ao tentar editar ou deletar um contato sem estar autenticado, informando que é necessário realizar o login para acessar os mecanismos da agenda.
+* [ ] 📝 Separar as páginas de **cadastro** e **login**, tornando o fluxo de autenticação mais organizado.
+* [ ] ➡️ Redirecionar o usuário para a página de **login após concluir o cadastro**.
+* [ ] ✏️ Alterar o texto do subtítulo nas páginas de **cadastro e edição** para melhorar a clareza das informações.
+* [ ] 💬 Centralizar os textos das mensagens **flash** para melhorar a apresentação visual.
+* [ ] 🌐 Adicionar um **favicon** à aplicação.
