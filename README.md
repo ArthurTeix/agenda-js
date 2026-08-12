@@ -17,3 +17,37 @@ A aplicação permite que usuários criem suas próprias contas, realizem login 
 Além do CRUD, o projeto também conta com autenticação, gerenciamento de sessões, validações de dados e organização do código em diferentes responsabilidades.
 
 ---
+
+## 🚀 Tecnologias Utilizadas
+
+### 🎨 Front-end
+
+* **CSS3**
+* **JavaScript**
+* **EJS** — criação das páginas e templates
+* **Bootstrap** — framework CSS para estilização e responsividade
+
+### ⚙️ Back-end
+
+* **Node.js** — ambiente de execução JavaScript
+* **Express.js** — framework utilizado na construção do servidor
+* **Mongoose** — modelagem e comunicação com o MongoDB
+* **Webpack** — empacotamento dos arquivos do front-end
+* **Babel** — transpilação de JavaScript
+
+### 🗄️ Banco de Dados
+
+* **MongoDB** — banco de dados NoSQL
+* **Mongoose** — ODM utilizado para trabalhar com o MongoDB
+
+### 🔐 Autenticação e Segurança
+
+* **bcryptjs** — hash e verificação de senhas
+* **express-session** — gerenciamento de sessões
+* **connect-mongo** — armazenamento das sessões no MongoDB
+* **csurf** — proteção contra CSRF
+* **helmet** — configuração de headers de segurança
+* **validator** — validação e sanitização de dados
+* **dotenv** — gerenciamento de variáveis de ambiente
+
+---
