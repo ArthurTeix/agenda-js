@@ -159,9 +159,10 @@ CONNECTIONSTRING=sua_string_de_conexao_mongodb
 
 ### 5. Execute o projeto
 
+> Será necessário dois terminais
+
 Para iniciar o servidor:
 
-> Será necessário dois terminais
 
 ```bash
 npm start
