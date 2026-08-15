@@ -89,8 +89,8 @@ agenda-js/
 │
 ├── public/
 │   └── assets/
-│       └── js/
-│
+│       └── bundle.js
+│       └── bundle.js.map
 ├── src/
 │   ├── controllers/
 │   ├── middlewares/
