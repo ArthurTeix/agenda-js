@@ -4,7 +4,7 @@ Uma aplicação web (desktop) de **agenda de contatos**, desenvolvida com **Node
 
 O acesso à agenda é protegido: para utilizar as funcionalidades da aplicação, o usuário precisa realizar seu **cadastro e login**.
 
-🔗 **[Acessar aplicação](https://agendadecontatos.onrender.com)**
+🔗 **[Acessar aplicação](https://agendadecontatos.onrender.com)** (Ao clicar, aguarde 1 minuto para acessar!)
 
 ---
 
